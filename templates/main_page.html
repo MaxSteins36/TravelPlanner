@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../static/main_style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        background-image: url("../static/1055726.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+    </style>
+    <title>Home - Travel planner</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="header">
+        <h1>Travel Planner - Home Page</h1>
+      </div>
+      <div id="subcontainer">
+        <div id="nav">
+          <table width="100%">
+            <tr>
+              <td>
+                <a id="newTrip" href="#"><b>New Trip</b></a>
+              </td>
+              <td>
+                <a id="viewTrip" href="#"><b>Past Trips</b></a>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="main">
+          <form action="/search" method="post"></form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("viewTrip")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          window.location.href = "/pastTrips";
+        });
+    </script>
+
+    <script>
+      document
+        .getElementById("newTrip")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          window.location.href = "/searchFlight";
+        });
+    </script>
+  </body>
+</html>

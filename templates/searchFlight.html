@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Planner</title>
+    <link rel="stylesheet" href="../static/searchFlight_style.css" />
+  </head>
+  <body>
+    <h1>Travel Planner</h1>
+
+    <div id="main-container">
+      <div id="left-sidebar">
+        <div class="search-block">
+          <h2>Flight Search</h2>
+          <label for="origin">Origin:</label>
+          <input type="text" id="origin" name="origin" required />
+
+          <label for="destination">Destination:</label>
+          <input type="text" id="destination" name="destination" required />
+
+          <label for="departureDate">Departure Date:</label>
+          <input type="date" id="departureDate" name="departureDate" required />
+
+          <label for="returnDate">Return Date:</label>
+          <input type="date" id="returnDate" name="returnDate" />
+
+          <label for="adults">Number of Adults:</label>
+          <input type="number" id="adults" name="adults" min="1" required />
+        </div>
+
+        <div class="search-block">
+          <h2>Hotel Search</h2>
+          <label for="city">City:</label>
+          <input type="text" id="city" name="city" required />
+
+          <label for="checkInDate">Check-In Date:</label>
+          <input type="date" id="checkInDate" name="checkInDate" required />
+
+          <label for="checkOutDate">Check-Out Date:</label>
+          <input type="date" id="checkOutDate" name="checkOutDate" required />
+
+          <label for="roomQuantity">Room Quantity:</label>
+          <input
+            type="number"
+            id="roomQuantity"
+            name="roomQuantity"
+            min="1"
+            required
+          />
+        </div>
+
+        <button type="submit" id="submit">Submit</button>
+        <button type="submit" id="activities">
+          View Activities In Your Location
+        </button>
+      </div>
+
+      <div id="right-container">
+        <div id="optimal-container">
+          <button id="optimal-month-btn" onclick="toggleDropdown()">
+            Get Optimal Month
+          </button>
+
+          <!--Link TO optimal Month Results-->
+          <div id="display_optimal_month"></div>
+
+          <select id="month-dropdown" style="display: none">
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+          </select>
+        </div>
+        <div id="results">
+          <button id="view-flights">View Flights</button>
+        </div>
+        <div id="hotel_information_container">
+          <button id="view-hotels">View Hotels</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("activities")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          window.location.href = "/activities";
+        });
+    </script>
+
+    <script>
+      function toggleDropdown() {
+        const dropdown = document.getElementById("month-dropdown");
+
+        // Toggle visibility of the dropdown
+        dropdown.style.display =
+          dropdown.style.display === "none" || dropdown.style.display === ""
+            ? "block"
+            : "none";
+      }
+
+      // Attach the event listener once, outside of toggleDropdown
+      document
+        .getElementById("month-dropdown")
+        .addEventListener("change", function () {
+          const selectedMonth = this.value; // 'this' refers to the dropdown element
+          console.log("Selected month:", selectedMonth);
+          fetchOptimalMonth(selectedMonth);
+        });
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+  </body>
+</html>

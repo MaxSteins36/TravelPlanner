@@ -1,0 +1,310 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  overflow-y: auto;
+  background-image: url("1055726.png");
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+h1 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 42px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+#left-sidebar {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.search-block {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 20px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.search-block h2 {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+label {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+}
+
+input::placeholder,
+select {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+button {
+  background: #fff;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 12px;
+  align-self: center;
+  display: block;
+}
+
+button:hover {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+#right-container {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  gap: 120px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+#left-container {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  float: left;
+}
+
+#center-container {
+  width: 27.5%;
+  display: flex;
+  flex-direction: column;
+  float: center;
+}
+#right1-container {
+  width: 27.5%;
+  display: flex;
+  flex-direction: column;
+  float: right;
+}
+
+#optimal-month {
+  width: fit-content;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+
+#month-dropdown {
+  width: 150px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  background: transparent;
+  color: white;
+  font-size: 14px;
+}
+
+#view-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+#view-buttons button {
+  width: fit-content;
+}
+
+#optimal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+#optimal-month-btn {
+  width: 180px;
+}
+
+.flight-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between the pairs of details */
+}
+
+.flight-detail-pair p {
+  margin: 5px 0; /* Space between the individual details */
+}
+
+.flight-detail-pair strong {
+  color: #333; /* Slightly darker color for the labels */
+}
+
+/* Optional: Add some spacing and styling for the individual flight results */
+.flight-result {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 450px;
+  min-height: 200px; /* Ensures a baseline height for small content */
+  display: flex;
+  flex-direction: column; /* Keeps the content stacked vertically */
+  gap: 15px; /* Adds space between elements inside the flight result */
+}
+
+.add-flight-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-flight-button:hover {
+  background-color: #45a049;
+}
+
+.hotel-result {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 450px;
+}
+
+.hotel-result h3 {
+  margin-bottom: 10px;
+}
+
+.add-hotel-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-hotel-button:hover {
+  background-color: #0056b3;
+}
+
+/* Flight Item container styling */
+.flight-item {
+  border: 1px solid #ccc; /* Light border around each flight */
+  padding: 20px; /* Space inside the container */
+  margin-bottom: 20px; /* Space between flight items */
+  background-color: #f9f9f9; /* Light gray background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition on hover */
+}
+
+.flight-item:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+/* Flight details styling */
+.flight-item p {
+  font-size: 14px;
+  margin: 5px 0; /* Space between paragraphs */
+}
+
+.flight-item p strong {
+  font-weight: bold; /* Make labels bold */
+}
+
+/* Heading styling */
+.flight-item h4 {
+  margin-top: 20px; /* Space before each heading */
+  font-size: 16px;
+  font-weight: bold;
+  color: #333; /* Darker color for headings */
+}
+
+/* Outbound and Inbound flight details styling */
+.flight-item .flight-details {
+  padding-left: 20px; /* Indentation for flight details */
+  margin-top: 10px;
+}
+
+/* Add a line separator between flights */
+.flight-item hr {
+  border: 1px solid #ddd; /* Light gray line */
+  margin: 10px 0; /* Space around the line */
+}
+
+/* Button styling (for "Add Trip" button) */
+.add-flight-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.add-flight-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

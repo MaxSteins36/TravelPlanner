@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/styles.css" />
+  </head>
+  <body>
+    <div class="login_container active" id="login_form">
+      <h2 class="login_title">Login</h2>
+      <div class="login_input_container">
+        <input
+          type="text"
+          id="login_username"
+          name="username"
+          required
+          placeholder="Username"
+        />
+        <input
+          id="login_password"
+          type="password"
+          required
+          placeholder="Password"
+        />
+      </div>
+      <div class="options">
+        <input type="checkbox" id="remember" name="remember" />
+        <label for="remember">Remember me</label>
+
+        <a href="#" id="forgot_password_link" onclick="showForgotPassword()"
+          >Forget Password?</a
+        >
+      </div>
+      <button id="login_button" type="submit">Login</button>
+      <p>
+        Don't have an account?
+        <a href="#" id="to_sign_up_page" onclick="toggleForms()">Register</a>
+      </p>
+    </div>
+    <div id="forgot_password_modal" style="display: none"></div>
+    <div class="login_container" id="signup_form" style="display: none">
+      <h2 class="login_title">Create Account</h2>
+      <div class="login_input_container">
+        <input
+          type="first name"
+          id="signup_firstname"
+          name="First Name"
+          required
+          placeholder="First Name"
+        />
+        <input
+          type="last name"
+          id="signup_lastname"
+          name="Last Name"
+          required
+          placeholder="Last Name"
+        />
+        <input
+          type="text"
+          id="signup_username"
+          name="username"
+          required
+          placeholder="Username"
+        />
+        <input
+          id="signup_password"
+          type="password"
+          name="password"
+          required
+          placeholder="Password"
+        />
+      </div>
+      <button id="signup_button">Sign Up</button>
+      <p>
+        Already have an account?
+        <a href="#" id="to_login_page" onclick="toggleForms()">Login</a>
+      </p>
+    </div>
+    <script>
+      function toggleForms() {
+        const loginForm = document.getElementById("login_form");
+        const signupForm = document.getElementById("signup_form");
+        console.log("Toggling forms...");
+        console.log("Login Form Display:", loginForm.style.display);
+        console.log("Signup Form Display:", signupForm.style.display);
+
+        if (loginForm.style.display === "none") {
+          loginForm.style.display = "block";
+          signupForm.style.display = "none";
+        } else {
+          loginForm.style.display = "none";
+          signupForm.style.display = "block";
+        }
+      }
+
+      function showForgotPassword() {
+        /*new add 2*/
+        const modal = document.getElementById("forgot_password_modal");
+        const loginForm = document.getElementById("login_form");
+
+        modal.style.display = "block";
+        loginForm.style.display = "none";
+      }
+
+      function closeForgotPassword() {
+        /*new add 2*/
+        const modal = document.getElementById("forgot_password_modal");
+        const loginForm = document.getElementById("login_form");
+
+        modal.style.display = "none";
+        loginForm.style.display = "block";
+      }
+    </script>
+    <script src="{{url_for('static', filename='login_database.js')}}"></script>
+  </body>
+</html>
