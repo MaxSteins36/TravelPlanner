@@ -28,7 +28,7 @@
 ## User Interface Specification
 
 ### Navigation Diagram
-![Navigation Diagram](./Navigation_diagram%20(2).jpeg)
+![Navigation Diagram](./Navigation_diagram.jpeg)
 
 ### Screen Layouts
 [View Screen Layout](./Screen%20Layout.pdf)
@@ -38,29 +38,29 @@
 ![New Class Diagram](CS100ClassDiagram(6).drawio.png)
 
 Login page: Where the user can either make a new account or log in.
-![Login page](./screenshots/login.png)
+![Login page](./static/login.png)
 
 Create new account page allows users to register for a new account by providing the necessary information: first and last name, username, and password.
-![Create account page](./screenshots/create_account.png)
+![Create account page](./static/create_account.png)
 
 After successfully login, the main page gives 2 options: plan a new trip or review past trip.
-![Main page](./screenshots/main_page.png)
+![Main page](./static/main_page.png)
 
 The past trip option shows user info and their last (previous) trip information.
-![Past history](./screenshots/past_history.png)
+![Past history](./static/past_history.png)
 
 The new trip option takes input (dummy as displayed) and then shows the available information for the input received.
-![New trip](./screenshots/new_trip.png)
+![New trip](./static/new_trip.png)
 
 The optimal month option on the new trip page lets you choose the month to evaluate the best options.
-![Optimal month input](./screenshots/optimal_month.png)
+![Optimal month input](./static/optimal_month.png)
 
 Then return the output as follows:
 
-![Optimal month output](./screenshots/optimal_output.png)
+![Optimal month output](./static/optimal_output.png)
 
 Click the activities button from the new trip page:
-![Activities](./screenshots/activities.png)
+![Activities](./static/activities.png)
  
  ## Installation/Usage
 To install this program you need to have a flask extension, python extensio, sqlite extension, requests library and asyncio. To use this program you would login or sign up in the main page. The login feature checks if your current information exists in the database, if so it takes you to the main page. In sign up it adds you to the database and returns you to the login page. After you're in the main page you have the option of viewing your past trips associated with your specific user ID given to you on account creation or searching flights or hotels. When you go to search flights or create new trips you enter the relevant api data which is similar to the data of your trip like departure date, return date etc. After that you will be able to see what flights and hotels are available. If you want to see the best deals, you can go to optimal month and select month and it will return the best prices for each cabin within that month. The add button functionality adds the flights and hotels to the database. 
